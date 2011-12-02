@@ -1,12 +1,12 @@
 Name:		patchelf
-Version:	0.5
+Version:	0.6
 Release:	1	
 Summary:	A utility for patching ELF binaries
 
 Group:		Development/C
 License:	GPLv3+
 URL:		http://nixos.org/patchelf.html
-Source0:	http://hydra.nixos.org/build/114505/download/2/%{name}-%{version}.tar.bz2
+Source0:	http://hydra.nixos.org/build/114505/download/2/%{name}-%{version}.tar.gz
 Source1:	patchelf.1
 
 %description
