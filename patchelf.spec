@@ -40,3 +40,14 @@ install --mode=0644 %{SOURCE1} %{buildroot}/%{_mandir}/man1
 %{_bindir}/patchelf
 %{_mandir}/man1/patchelf.1*
 %doc README COPYING
+
+
+%changelog
+* Fri Dec 02 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.6-1
++ Revision: 737200
+- version update 0.6
+
+* Fri Nov 11 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.5-1
++ Revision: 730182
+- imported package patchelf
+
