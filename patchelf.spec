@@ -7,7 +7,7 @@ Group:		Development/C
 License:	GPLv3+
 URL:		http://nixos.org/patchelf.html
 Source0:	http://hydra.nixos.org/build/114505/download/2/%{name}-%{version}.tar.gz
-#Source1:	patchelf.1
+Source1:	patchelf.1
 
 %description
 PatchELF is a simple utility for modifying existing ELF executables
