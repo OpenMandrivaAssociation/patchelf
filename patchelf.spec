@@ -21,6 +21,7 @@ of executables and change the RPATH of executables and libraries.
 rm src/elf.h
 
 %build
+sh ./bootstrap.sh
 %configure
 %make_build
 
