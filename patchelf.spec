@@ -1,5 +1,5 @@
 Name:		patchelf
-Version:	0.10
+Version:	0.11
 Release:	1	
 Summary:	A utility for patching ELF binaries
 
