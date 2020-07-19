@@ -40,7 +40,7 @@ install --mode=0644 %{SOURCE1} %{buildroot}/%{_mandir}/man1
 %files
 %{_bindir}/patchelf
 %{_mandir}/man1/patchelf.1*
-%doc README COPYING
+%doc README.md COPYING
 
 
 %changelog
