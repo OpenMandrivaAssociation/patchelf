@@ -1,27 +1,34 @@
-Name:		patchelf
-Version:	0.11
-Release:	1	
 Summary:	A utility for patching ELF binaries
-
-Group:		Development/C
+Name:		patchelf
+Version:	0.12
+Release:	1
 License:	GPLv3+
-URL:		http://nixos.org/patchelf.html
-Source0:	http://hydra.nixos.org/build/114505/download/2/%{name}-%{version}.tar.gz
-Source1:	patchelf.1
+Group:		Development/Tools
+Url:		http://nixos.org/patchelf.html
+Source0:	https://github.com/NixOS/patchelf/archive/%{version}.tar.gz
+BuildRequires:	acl-devel
+BuildRequires:	attr-devel
 
 %description
-PatchELF is a simple utility for modifying existing ELF executables
-and libraries.  It can change the dynamic loader ("ELF interpreter")
-of executables and change the RPATH of executables and libraries.
+PatchELF is a simple utility for modifying an existing ELF executable
+or library. It can change the dynamic loader ("ELF interpreter")
+of an executable and change the RPATH of an executable or library.
+
+%files
+%doc COPYING
+%{_bindir}/patchelf
+%{_mandir}/man1/patchelf.1*
+
+#----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 # package ships elf.h - delete to use glibc-headers one
 rm src/elf.h
 
 %build
-sh ./bootstrap.sh
+autoreconf -fi
 %configure
 %make_build
 
@@ -30,25 +37,7 @@ sh ./bootstrap.sh
 
 # the docs get put in a funny place, so delete and include in the
 # standard way in the docs section below
-rm -rf %{buildroot}/usr/share/doc/%{name}
+rm -rf %{buildroot}%{_datadir}/doc/%{name}
 
-# install the man page
-mkdir -p %{buildroot}/%{_mandir}/man1
-install --mode=0644 %{SOURCE1} %{buildroot}/%{_mandir}/man1
-
-
-%files
-%{_bindir}/patchelf
-%{_mandir}/man1/patchelf.1*
-%doc README.md COPYING
-
-
-%changelog
-* Fri Dec 02 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.6-1
-+ Revision: 737200
-- version update 0.6
-
-* Fri Nov 11 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.5-1
-+ Revision: 730182
-- imported package patchelf
-
+%check
+make check
