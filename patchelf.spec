@@ -1,13 +1,13 @@
 Summary:	A utility for patching ELF binaries
 Name:		patchelf
 Version:	0.12
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Development/Tools
 Url:		http://nixos.org/patchelf.html
 Source0:	https://github.com/NixOS/patchelf/archive/%{version}.tar.gz
-BuildRequires:	acl-devel
-BuildRequires:	attr-devel
+BuildRequires:	pkgconfig(libacl)
+BuildRequires:	pkgconfig(libattr)
 
 %description
 PatchELF is a simple utility for modifying an existing ELF executable
