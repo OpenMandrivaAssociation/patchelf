@@ -1,11 +1,15 @@
+# (tpg) 2022-06-13 fix ld.lld: error: undefined symbol: __stack_chk_fail
+%global optflags %{optflags} -fno-stack-protector
+%global build_ldflags %{build_ldflags} -z nostart-stop-gc
+
 Summary:	A utility for patching ELF binaries
 Name:		patchelf
-Version:	0.14.3
+Version:	0.14.5
 Release:	1
 License:	GPLv3+
 Group:		Development/Tools
 Url:		http://nixos.org/patchelf.html
-Source0:	https://github.com/NixOS/patchelf/archive/%{version}.tar.gz
+Source0:	https://github.com/NixOS/patchelf/archive/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(libacl)
 BuildRequires:	pkgconfig(libattr)
 
@@ -17,7 +21,7 @@ of an executable and change the RPATH of an executable or library.
 %files
 %doc COPYING
 %{_bindir}/patchelf
-%{_mandir}/man1/patchelf.1*
+%doc %{_mandir}/man1/patchelf.1*
 
 #----------------------------------------------------------------------------
 
@@ -40,4 +44,4 @@ autoreconf -fi
 rm -rf %{buildroot}%{_datadir}/doc/%{name}
 
 %check
-make check
+make check || cat tests/test-suite.log ||:
