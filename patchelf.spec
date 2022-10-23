@@ -4,12 +4,12 @@
 
 Summary:	A utility for patching ELF binaries
 Name:		patchelf
-Version:	0.14.5
+Version:	0.15.0
 Release:	1
 License:	GPLv3+
 Group:		Development/Tools
 Url:		http://nixos.org/patchelf.html
-Source0:	https://github.com/NixOS/patchelf/archive/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/NixOS/patchelf/releases/download/%{version}/patchelf-%{version}.tar.bz2
 BuildRequires:	pkgconfig(libacl)
 BuildRequires:	pkgconfig(libattr)
 
