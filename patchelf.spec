@@ -4,7 +4,7 @@
 
 Summary:	A utility for patching ELF binaries
 Name:		patchelf
-Version:	0.17.0
+Version:	0.17.2
 Release:	1
 License:	GPLv3+
 Group:		Development/Tools
