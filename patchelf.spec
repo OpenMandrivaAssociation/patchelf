@@ -21,6 +21,7 @@ of an executable and change the RPATH of an executable or library.
 %files
 %doc COPYING
 %{_bindir}/patchelf
+%{_datadir}/zsh/site-functions/_patchelf
 %doc %{_mandir}/man1/patchelf.1*
 
 #----------------------------------------------------------------------------
