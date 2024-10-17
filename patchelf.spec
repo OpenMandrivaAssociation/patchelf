@@ -8,7 +8,7 @@ Version:	0.18.0
 Release:	1
 License:	GPLv3+
 Group:		Development/Tools
-Url:		http://nixos.org/patchelf.html
+Url:		https://nixos.org/patchelf.html
 Source0:	https://github.com/NixOS/patchelf/releases/download/%{version}/patchelf-%{version}.tar.bz2
 BuildRequires:	pkgconfig(libacl)
 BuildRequires:	pkgconfig(libattr)
